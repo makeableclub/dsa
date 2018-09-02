@@ -1,0 +1,28 @@
+2018.08.26
+climb staircases
+- climb 14 steps with max leap of 2
+
+- to simplify the problem:
+	leap of 1, leap of 2, max leap of 2
+	1, 2, 3, 5 steps for max leap of 2
+	any pattern?
+- algorithm   ways(n) = ways(n-1) + ways(n-2)
+- programming
+- recursive, ending condition
+
+- climb 100 steps (or 354 steps at Status of Liberty)
+- dynamic programming
+
+- how about max leap of 3
+
+generalization:
+how many ways to reach level N, given one can take max leap of k?
+
+2018.09.02
+- review with N=6 case;
+
+- print out the actual ways?
+
+- action before or after recursion calls
+
+- iterative vs recursive
