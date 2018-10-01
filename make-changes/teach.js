@@ -9,7 +9,6 @@ function coinChange(amount, setsize, coins, usedcoins)
 {
     // base conditions
     if(amount == 0)  {
-        // print out the coins used for this branch
         console.log(usedcoins);
         return 1;
     }
@@ -17,17 +16,13 @@ function coinChange(amount, setsize, coins, usedcoins)
     if(setsize == 0 && amount >= 0) return 0;
 
     // algorithms:
-    // the branch that uses at least once with the coins[setsize-1] denominator
-    let used1 = usedcoins.slice(0);
-    used1[setsize-1] = used1[setsize-1] + 1;
-
     // make recursive calls
-    let branch1 = coinChange(amount-coins[setsize-1], setsize, coins, used1);
+    // removed one coin
+    let branch2 = coinChange(amount, setsize-1, coins, usedcoins);
 
-    // the branch that does not use last coin (coins[setsize-1]) in the set.
-    let used2 = usedcoins.slice(0);
-
-    let branch2 = coinChange(amount, setsize-1, coins, used2);
+    // at least one last coin
+    usedcoins[setsize-1] = usedcoins[setsize-1] + 1;
+    let branch1 = coinChange(amount-coins[setsize-1], setsize, coins, usedcoins);
 
     return branch1 + branch2;
 }
