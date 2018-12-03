@@ -39,7 +39,7 @@ console.log( "size: ", len);
 
 
 console.log("list =============");
-var newList = genLinkedList(10);
+var newList = genLinkedList(11);
 newList.printLinkedList();
 // reserve it
 console.log("reversed =============");
@@ -47,7 +47,8 @@ console.log("reversed =============");
 newList.recursiveReverse(newList.head);
 newList.printLinkedList();
 
-
+console.log("is it a loop? ========");
+console.log( newList.isLoop() );
 
 function genLinkedList(n) {
     var list = new LinkedList();

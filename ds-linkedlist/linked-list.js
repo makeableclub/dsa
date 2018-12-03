@@ -128,7 +128,7 @@ class LinkedList {
         // split the list into "first node" and remaining
         // var node = current;
         // var rest = current.next;
-        
+
         this.recursiveReverse(current.next);
 
         // restReversed.next = current;
@@ -136,6 +136,22 @@ class LinkedList {
         current.next = null;
 
         return this.head;
+    }
+
+    isLoop() {
+        var pFast = this.head;
+        var pSlow = this.head;
+
+        while( pFast!= null && pFast.next != null) {
+            pFast = pFast.next.next;
+            pSlow = pSlow.next;
+
+            if( pFast == pSlow) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
 
