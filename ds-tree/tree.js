@@ -22,13 +22,28 @@ class BinarySearchTree {
         var currNode = this.root;
         while( currNode != null ) {
             if( data < currNode.data ) {
-                currNode = currNode.left;
+                if( currNode.left == null ) {
+                    currNode.left = node;
+                    break;
+                }
+                else {
+                    // traverse
+                    currNode = currNode.left;
+                }
             }
             else {
-                currNode = currNode.right;
+                if( currNode.right == null ) {
+                    currNode.right = node;
+                    break;
+                }
+                else {
+                    // traverse
+                    currNode = currNode.right;
+                }
             }
         }
         // by this time, we get to the bottom
+        console.log("got here?")
         currNode = node;
 
         // if( data < this.root.data) {
