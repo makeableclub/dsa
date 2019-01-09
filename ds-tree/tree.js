@@ -12,6 +12,45 @@ class BinarySearchTree {
         this.root = null;
     }
 
+    inOrder(node) {
+        // exit condition
+        if(node === null) {
+            return;
+        }
+        // 1. keep going left recursively
+        this.inOrder(node.left);
+        // 2. print out the node
+        console.log(node.data);
+        // 3. keeping going to the right
+        this.inOrder(node.right);
+    }
+
+    preOrder(node) {
+        // exit condition
+        if(node === null) {
+            return;
+        }
+        // 2. print out the node
+        console.log(node.data);
+        // 1. keep going left recursively
+        this.preOrder(node.left);
+        // 3. keeping going to the right
+        this.preOrder(node.right);
+    }
+
+    postOrder(node) {
+        // exit condition
+        if(node === null) {
+            return;
+        }
+        // 1. keep going left recursively
+        this.postOrder(node.left);
+        // 3. keeping going to the right
+        this.postOrder(node.right);
+        // 2. print out the node
+        console.log(node.data);
+    }
+
     addData(data) {
         var node = new Node(data, null, null);
         if( this.root == null ) {
@@ -43,7 +82,6 @@ class BinarySearchTree {
             }
         }
         // by this time, we get to the bottom
-        console.log("got here?")
         currNode = node;
 
         // if( data < this.root.data) {
