@@ -1,0 +1,18 @@
+data structure topics:
+array (list, set, stack, queue)
+hashtable (dictionary, hashmap, object, JSON)
+tree (linkedlist, binary tree, BST, trie, graphs)
+
+https://medium.com/siliconwat/data-structures-in-javascript-1b9aed0ea17c
+
+https://medium.com/siliconwat/algorithms-in-javascript-b0bed68f4038
+
+Array:
+
+initialization
+put;
+insert;
+deletion;
+
+mutator methods;
+accessor methods;
